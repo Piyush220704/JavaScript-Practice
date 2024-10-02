@@ -1,0 +1,30 @@
+// let number = 33;
+// let impureNumber = "33abc"
+// console.log(typeof number);
+// console.log(typeof String(number));
+// console.log(impureNumber);
+// console.log(typeof impureNumber);
+// console.log(Number(impureNumber));
+// console.log(typeof Number(impureNumber));
+
+//operations
+
+// console.log(2**3); ->for power -> 2 to the power 3 -> 8
+
+// let str1 = "hello";
+// let str2 = " piyush";
+// let str3 = str1+str2;
+// console.log(str3);
+
+
+// console.log("1" + 2);
+// console.log(1 + "2");
+// console.log(1 + 2 + "2");
+
+//always remember code readibility
+
+// console.log(true);
+// console.log(+"");
+
+
+
