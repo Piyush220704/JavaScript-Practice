@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" target="_blank" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+
+<script>
+    // document.getElementById("owl").onclick = ()=>{
+    //     alert("You clicked the owl image!")
+    // }
+
+    //best approach
+    // document.getElementById('owl').addEventListener('click', (e)=>{
+    //     // alert("You clicked the owl image!")
+    //     console.log(e);
+    // }, false)
+
+    //attachEvent() -> early time 
+
+    //Topics to Study while learning events
+    //type, timestamp, defaultPrevented, 
+    // target, toElement, srcElement, currentTarget
+    //clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keyCode
+
+
+    //bubbling mode (bottom->top) (false) and capturing mode (top->bottom)(true)
+
+    //bubbling
+    // document.getElementById("images").addEventListener("click", (e)=>{
+    //     console.log("you clicked the image inside the ul")
+    // }, false);
+    // document.getElementById("owl").addEventListener("click", (e)=>{
+    //     console.log("you clicked the owl inside the ul")
+    // }, false);
+    // first owl then images
+
+
+    //capturing mode
+    // document.getElementById("images").addEventListener("click", (e)=>{
+    //     console.log("you clicked the image inside the ul")
+    // }, true);
+    // document.getElementById("owl").addEventListener("click", (e)=>{
+    //     console.log("you clicked the owl inside the ul")
+    // }, true);
+    //first image then owl
+
+    // e.stopPropogation() the code will not bubble and go out of the element to the parent
+    // document.getElementById("owl").addEventListener('click', (e)=>{
+    //     console.log("you clicked the owl inside the ul")
+    //     e.stopPropagation();
+    // }, false)
+
+
+    // document.getElementById('google').addEventListener('click', (e)=>{
+    //     e.preventDefault();
+    //     e.stopPropagation();
+    //     console.log("you clicked the google link")
+    // })
+
+    //deleting
+    // if we click on anywhere on the page it will delete the whole page this is because if we click on list item the e.target.parentNode will give the parent of li which is ul ie it will delete the whole ul
+    // document.querySelector('#images').addEventListener('click', (e)=>{
+    //     console.log(e.target.parentNode);
+    //     let removeIt = e.target.parentNode
+    //     removeIt.remove();
+    // })
+    //another way of writing the same code
+    // document.getElementById('images').addEventListener('click', (e)=>{
+    //     let removeIt = e.target.parentNode;
+    //     removeIt.parentNode.removeChild(removeIt);
+    // })
+
+    //a better way could be using tag name
+    document.getElementById('images').addEventListener('click', (e)=>{
+        // console.log(e.target.tagName);
+        if(e.target.tagName === 'IMG'){
+            let removeIt = e.target.parentNode;
+            removeIt.parentNode.removeChild(removeIt);
+        }
+    })
+
+
+</script>
+</html>
