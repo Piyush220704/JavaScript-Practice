@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black; color: white;">
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+</body>
+
+<script>
+    // const list = document.querySelector(".language")
+    // // console.log(list.children);
+    // const newli = document.createElement("li");
+    // // newli.innerHTML = "Java"
+    // const text = document.createTextNode("Java");
+    // newli.appendChild(text);
+    // list.appendChild(newli)
+
+    function addLanguage(langName){
+        const li = document.createElement("li")
+        li.innerHTML = `${langName}`;
+        const list = document.querySelector(".language").appendChild(li);
+    }
+    addLanguage("Java")
+    addLanguage("Python")
+
+
+    //little optimised
+    // if innerHTML is used, it traverse the whole tree in the document as we want to go to the end 
+
+    function addLanguageOPT(langname){
+        const li = document.createElement("li")
+        li.appendChild(document.createTextNode(langname));
+        document.querySelector(".language").appendChild(li);
+    }
+    addLanguageOPT("TypeScript")
+
+
+    //edit
+    const secondLang = document.querySelector("li:nth-child(2)");
+    // secondLang.innerHTML = "C++"
+    const secondLi = document.createElement('li');
+    // secondLi.appendChild(document.createTextNode("C++"));
+    // secondLang.replaceWith(secondLi);
+    secondLi.innerHTML = "C++";
+    secondLang.replaceWith(secondLi);
+
+
+    //edit
+    const firstLang = document.querySelector("li:first-child");
+    firstLang.outerHTML = '<li>Golang</li>'
+
+
+    //remove
+    const lastLang = document.querySelector("li:last-child");
+    lastLang.remove();
+</script>
+</html>
