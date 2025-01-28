@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #313131; color: white;">
+    <button id="orange">orange</button>
+    <button id="green">green</button>
+</body>
+
+<script>
+    // function init(){
+    //     let name = "Mozilla";
+    //     function displayName(){
+    //         alert(name);
+    //     }
+    //     displayName();
+    // }
+    // init();
+
+    // function outer(){
+    //     let name = "parent";
+    //     function inner(){
+    //         let secret = "smoke"
+    //         console.log(`inner have access to ${name}`)
+    //     }
+    //     function inner2(){
+    //         console.log(`inner2 also have access to ${name}`)
+    //         // console.log(secret)
+    //     }
+    //     inner();
+    //     inner2();
+    // }
+    // outer();
+
+
+    // //passing reference of inner function as a return value
+    // function makeFun(){
+    //     const name = "parent";
+    //     function displayName(){
+    //         console.log(name);
+    //     }
+    //     return displayName;
+    // }
+    // const myFun = makeFun();
+    // myFun();
+    //here the whole lexical environment of makeFun is returned as a reference to the function displayName
+
+    //practical overview
+    //change the color of the body with respect to the button clicked
+    // document.getElementById("orange").addEventListener("click", function(){
+    //     document.body.style.backgroundColor = "orange";
+    // });
+    // document.getElementById("green").addEventListener("click", function(){
+    //     document.body.style.backgroundColor = "green";
+    // });
+    //WHAT IF there are 100 buttons
+
+    function onClickHandler(color){
+        // document.body.style.backgroundColor = `${color}`;
+
+        //here the whole lexical scope of the function is returned as a reference to the function onClickHandler so the value of color that is passed as a parameter to onClickHandler is stored in the lexical scope of the function and is returned as a reference to the function
+        return function(){
+            document.body.style.backgroundColor = `${color}`;
+        }
+        
+    }
+
+    document.getElementById("orange").onclick = onClickHandler("orange");
+    document.getElementById("green").onclick = onClickHandler("green");
+</script>
+</html>
