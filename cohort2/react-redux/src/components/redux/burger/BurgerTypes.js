@@ -1,0 +1,3 @@
+const ORDER_BURGER = 'ORDER_BURGER';
+
+export {ORDER_BURGER}
