@@ -43,9 +43,17 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 // PgClient.query('COMMIT') -> this will commit the transaction
 import express from "express";
 import { Client } from "pg";
+<<<<<<< HEAD
 const app = express();
 app.use(express.json());
 const PgClient = new Client("postgresql://neondb_owner:npg_FtmeRaYxPT13@ep-floral-leaf-a1wp31i2-pooler.ap-southeast-1.aws.neon.tech/neondb?sslmode=require");
+=======
+import dotenv from "dotenv";
+dotenv.config();
+const app = express();
+app.use(express.json());
+const PgClient = new Client("process.env.DATABASE_URI");
+>>>>>>> 88f2630 (Save local changes before rebase)
 PgClient.connect();
 app.post('/signup', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
