@@ -1,0 +1,47 @@
+### GET into the web app
+GET http://localhost:3000
+
+### POST the register request
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+    "username": "Piyush",
+    "password": "Piyu$#2959"
+}
+
+### POST the login request
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "username": "Piyush",
+    "password": "Piyu$#2959"
+}
+
+### GET all the todos of the user
+GET http://localhost:3000/todos
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzQ2MzA5NDU4LCJleHAiOjE3NDYzOTU4NTh9.SV7iwfeBHz2P9Gg_eNMT3A5L78A15tD8SB8LrXb_S8M
+
+
+### create a new todo (protected)
+POST http://localhost:3000/todos
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzQ2MzA5NDU4LCJleHAiOjE3NDYzOTU4NTh9.SV7iwfeBHz2P9Gg_eNMT3A5L78A15tD8SB8LrXb_S8M
+Content-Type: application/json
+
+{
+    "task": "finish the coding projects"
+}
+
+### update a todo 
+PUT http://localhost:3000/todos/2
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzQ2MzA5NDU4LCJleHAiOjE3NDYzOTU4NTh9.SV7iwfeBHz2P9Gg_eNMT3A5L78A15tD8SB8LrXb_S8M
+
+{
+    "completed": 1
+}
+
+### delete a todo 
+DELETE http://localhost:3000/todos/2
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzQ2MzA5NDU4LCJleHAiOjE3NDYzOTU4NTh9.SV7iwfeBHz2P9Gg_eNMT3A5L78A15tD8SB8LrXb_S8M

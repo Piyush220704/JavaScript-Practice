@@ -14,4 +14,4 @@ class User{
 }
 
 const piyush = new User("piyush");
-// console.log(piyush.createId());
+console.log(piyush.createId());

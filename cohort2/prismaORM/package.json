@@ -1,0 +1,37 @@
+{
+  "name": "prismaorm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+<<<<<<< HEAD
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+=======
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tsc -b && node ./dist/src/index.js"
+  },
+  "type": "commonjs",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^6.7.0",
+    "@types/express": "^5.0.1",
+    "express": "^5.1.0",
+    "prisma": "^6.7.0"
+  },
+  "prisma":{
+    "seed": "ts-node prisma/seed.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.17",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  }
+>>>>>>> 88f2630 (Save local changes before rebase)
+}
